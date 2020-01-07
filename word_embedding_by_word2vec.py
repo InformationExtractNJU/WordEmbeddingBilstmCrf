@@ -2,8 +2,8 @@ from gensim.models import word2vec
 import jieba
 # word2vec.Text8Corpus('NewsCar_new_after_process/1/2.txt')
 
-# # 加载分句后的文件
-# reader = open('../train_data/sentences.txt',encoding = 'utf-8-sig')
+# 加载分句后的文件
+# reader = open('../train_data/sentences_relation.txt',encoding = 'utf-8-sig')
 # train_data = reader.readlines()
 #
 # def cut_voc(para):
@@ -30,6 +30,7 @@ import jieba
 #         # print (words)
 # #
 # # print (len(words))
+# print(words)
 # print (words[0])
 # model = word2vec.Word2Vec(words, size=256, min_count=1)
 
@@ -37,13 +38,13 @@ import jieba
 model = word2vec.Word2Vec.load("word2vec_model/word2vec_word_embedding.model")
 #
 # # 计算和车最相似的5个字
-x=model.most_similar("年开",topn=5)
+x=model.most_similar("技术",topn=5)
 print (x)
 #
 simliar=model.similarity('汽车','能源')
 print (simliar)
 # 输出'汽车'的词向量
-# print(model[['汽','车']])
+print(model[['汽车']])
 #
 # two_dim=model[['汽','车']]
 # res=[]
